@@ -1,16 +1,14 @@
 var page = require('webpage').create();
 var system = require('system');
 var address;
-var username;// = "60075098";
-var password;// = "qwe123&*(";
+var username;
+var password;
 if (system.args.length !== 4) {
     phantom.exit(1);
 } else {
     address = system.args[1];
     username = system.args[2];
     password = system.args[3];
-    console.log(password);
-    //phantom.exit(1);
 }
 
 
@@ -26,7 +24,7 @@ phantom.javascriptEnabled = true;
 page.onError = function (msg, trace) {
     console.log("error: " + msg);
     trace.forEach(function (item) {
-        //console.log('  ', item.file, ':', item.line);
+        console.log('  ', item.file, ':', item.line);
     });
 };
 
@@ -51,7 +49,7 @@ function run_step(steps, index) {
             console.log("function called " + index);
             index++;
             run_step(steps, index);
-        }, 30000);
+        }, 60000);
     } else {
         window.setTimeout(function () {
             page.render("./snapshot/" + index + ".png");
@@ -104,34 +102,3 @@ function save_timesheet() {
         window.frames['right'].document.getElementById("SaveButton").click();
     });
 }
-
-/*function report(){
-    page.evaluate(function(){
-        window.frames['right'].document.getElementById("btn_display").click();
-    });
-    window.setTimeout(function() {
-        page.render('report.png');
-        
-
-        var result = page.evaluate(function(){
-            var trs = window.frames['right'].document.querySelectorAll("table[id='final'] table tr[rr]");
-            var row = [];
-            for(var i=1;i<trs.length;i++){
-                var rowItem = [];
-                var tr = trs[i];
-                for(var j=0;j<tr.childNodes.length;j++){
-                    var td = tr.childNodes[j];
-                    var txt = td.querySelector("div span").innerText;
-                    rowItem.push(txt);
-                }
-                row.push(rowItem);
-            }
-            return JSON.stringify(row);
-        });
-        page.render('report2.png');
-        var system = require('system');
-
-        system.stdout.write('Hello, system.stdout.write!' + result);
-        phantom.exit();
-    },10000);
-}*/

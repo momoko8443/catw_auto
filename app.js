@@ -13,9 +13,10 @@ try {
 
 function runTask(cfg) {
     //{ hour: 14, minute: 30, dayOfWeek: 1 }
-    return schedule.scheduleJob('*/10 * * * *', function () {
-        callPhantomjs(cfg);
-    });
+    // return schedule.scheduleJob('*/10 * * * *', function () {
+    //     callPhantomjs(cfg);
+    // });
+    callPhantomjs(cfg);
 }
 
 
@@ -23,7 +24,7 @@ function callPhantomjs(cfg) {
     var cmdStr = 'phantomjs phantom_script.js ' + cfg.address + ' ' + cfg.employeeId + ' "' + cfg.password + '"';
     exec(cmdStr, function (err, stdout, stderr) {
         if (err) {
-            console.log('get weather api error:' + stderr);
+            console.log('get cmd errout:' + stderr);
         } else {
             console.log(stdout);
         }
