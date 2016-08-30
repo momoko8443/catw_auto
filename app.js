@@ -12,16 +12,18 @@ try {
 
 
 function runTask(cfg) {
-    //{ hour: 14, minute: 30, dayOfWeek: 1 }
-    // return schedule.scheduleJob('*/10 * * * *', function () {
-    //     callPhantomjs(cfg);
-    // });
-    callPhantomjs(cfg);
+    var rule = new schedule.RecurrenceRule();
+    rule.dayOfWeek = [2];
+    rule.hour = 21;
+    rule.minute = 41;
+    return schedule.scheduleJob(rule, function () {
+        callPhantomjs(cfg);
+    });
 }
 
 
 function callPhantomjs(cfg) {
-    var cmdStr = 'phantomjs phantom_script.js ' + cfg.address + ' ' + cfg.employeeId + ' "' + cfg.password + '"';
+    var cmdStr = 'phantomjs --ignore-ssl-errors=true --proxy=web-proxy.jpn.hp.com:8080 phantom_script.js ' + ' "' + cfg.address + '" ' + cfg.employeeId + ' "' + cfg.password + '"';
     exec(cmdStr, function (err, stdout, stderr) {
         if (err) {
             console.log('get cmd errout:' + stderr);

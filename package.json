@@ -4,15 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "forever start app.js",
-    "stop":"forever stop app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "forever": "^0.15.2",
-    "forever-monitor": "^1.7.0",
     "node-schedule": "^1.1.1"
   }
 }
