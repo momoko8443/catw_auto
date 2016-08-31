@@ -1,11 +1,18 @@
 var exec = require('child_process').exec;
 var schedule = require('node-schedule');
 var fs = require('fs');
+var express = require('express');
+var path = require('path');
+var app = express();
+var port = process.env.EXPRESS_PORT || 3000;
+app.use(express.static(path.join(__dirname,'snapshot')));
+app.listen(port,function(){
+    console.log('catw_auto on port %d', port);
+});
 var job;
 try {
     var cfg = JSON.parse(fs.readFileSync('./config.json'));
-    //job = runTask(cfg);
-    callPhantomjs(cfg)
+    job = runTask(cfg);
 } catch (e) {
     console.error(e);
 }
@@ -13,6 +20,8 @@ try {
 
 
 function runTask(cfg) {
+    callPhantomjs(cfg);
+
     var rule = new schedule.RecurrenceRule();
     rule.dayOfWeek = [1,3,5];
     rule.hour = 17;

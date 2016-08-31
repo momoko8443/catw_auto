@@ -4,6 +4,7 @@ ENV HTTP_PROXY http://web-proxy.jpn.hp.com:8080
 ENV HTTPS_PROXY http://web-proxy.jpn.hp.com:8080
 ENV http_proxy http://web-proxy.jpn.hp.com:8080
 ENV https_proxy http://web-proxy.jpn.hp.com:8080
+ENV EXPRESS_PORT 3000
 RUN mkdir /tmp/phantomjs \
     && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
            | tar -xj --strip-components=1 -C /tmp/phantomjs \
