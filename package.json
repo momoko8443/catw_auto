@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/forever/bin/forever -o out.log -e err.log start app.js",
+    "start": "node_modules/forever/bin/forever -o out.log -e err.log -c 'node --harmony' start app.js",
     "stop": "node_modules/forever/bin/forever stop app.js"
   },
   "keywords": [],
