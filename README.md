@@ -31,7 +31,7 @@ Save timesheet of CATW automatically, only for HPE managed cloud team internal u
 		docker ps //make sure catw_auto is on the containers' list
  5. **Step 4**
     
-    visit http://host:3000 to verify the snapshots of automatic operations. 
+    	visit http://host:3000 to verify the snapshots of automatic operations. 
     
   
 # Tips
