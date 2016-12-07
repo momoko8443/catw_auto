@@ -1,7 +1,15 @@
 # catw_auto
 Save timesheet of CATW automatically, only for HPE managed cloud team internal usage.   
 
+# Workflow
+ 0. login account
+ 1. copy current week's timesheet to next week.
+ 2. save current week's timesheet.
+ 3. repeat 0~2 every week. 
+
 # How to use
+ 0. **Step 0**
+ 		Make sure your current week's timesheet was filled.			  
 
  1. **Step 1**
  
