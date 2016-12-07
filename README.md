@@ -1,5 +1,5 @@
 # catw_auto
-Save timesheet of CATW automatically, only for HPE managed cloud team internal usage.   
+Fill&Save timesheet of CATW automatically, only for HPE managed cloud team internal usage.   
 
 # Workflow
  1. login account
@@ -38,7 +38,7 @@ Save timesheet of CATW automatically, only for HPE managed cloud team internal u
 		
 		docker ps //make sure catw_auto is on the containers' list
  6. **Step 6**
-    	wait about 5 minutes.
+    	waiting for 5 minutes.
     	visit http://host:3000 to verify the snapshots of automatic operations. 
     
   
