@@ -2,33 +2,33 @@
 Save timesheet of CATW automatically, only for HPE managed cloud team internal usage.   
 
 # Workflow
- 0. login account
- 1. copy current week's timesheet to next week.
- 2. save current week's timesheet.
- 3. repeat 0~2 every week. 
+ 1. login account
+ 2. copy current week's timesheet to next week.
+ 3. save current week's timesheet.
+ 4. repeat 1~3 every week. 
 
 # How to use
- 0. **Step 0**
+ 1. **Step 1**
  		Make sure your current week's timesheet was filled.			  
 
- 1. **Step 1**
+ 2. **Step 2**
  
 		perpare VM which installed docker
 		
 		set proxy for docker
 		
 		ssh VM
- 2. **Step 2**
+ 3. **Step 3**
 		 
 		 mkdir ~/your_dir/  
 		 
 		 cd ~/your_dir
- 3. **Step 3**
+ 4. **Step 4**
 		 
 		 git clone https://github.com/momoko8443/catw_auto.git
 		 
 		 modify config.json to set your employeeId and catw password
- 4. **Step 4**
+ 5. **Step 5**
 		
 		docker build -t catw_auto_image .
 		
@@ -37,7 +37,7 @@ Save timesheet of CATW automatically, only for HPE managed cloud team internal u
 		docker run -d -p 3000:3000 --name catw_auto catw_auto_image
 		
 		docker ps //make sure catw_auto is on the containers' list
- 5. **Step 5**
+ 6. **Step 6**
     	wait about 5 minutes.
     	visit http://host:3000 to verify the snapshots of automatic operations. 
     
