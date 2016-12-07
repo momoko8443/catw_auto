@@ -29,7 +29,7 @@ page.onError = function (msg, trace) {
 };
 
 
-var steps_1 = [login, time_entry, time_entry_continue, save_timesheet];
+var steps_1 = [login, time_entry, time_entry_continue, copy_timesheet,save_timesheet];
 
 run_step(steps_1, 0);
 
@@ -94,6 +94,12 @@ function time_entry() {
 function time_entry_continue() {
     page.evaluate(function () {
         window.frames['right'].document.getElementById("callprivacy").click();
+    });
+}
+
+function copy_timesheet(){
+    page.evaluate(function(){ 
+        window.frames['right'].document.getElementById("CopyToFutu").click();
     });
 }
 
