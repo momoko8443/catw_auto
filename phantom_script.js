@@ -29,7 +29,7 @@ page.onError = function (msg, trace) {
 };
 
 
-var steps_1 = [login, time_entry, time_entry_continue, copy_timesheet,save_timesheet];
+var steps_1 = [login, time_entry, time_entry_continue, goto_previousweek, copy_timesheet, goto_week, save_timesheet];
 
 run_step(steps_1, 0);
 
@@ -97,9 +97,21 @@ function time_entry_continue() {
     });
 }
 
+function goto_previousweek() {
+    page.evaluate(function () {
+        window.frames['right'].document.getElementById("PWeekButton").click();
+    });
+}
+
 function copy_timesheet(){
     page.evaluate(function(){ 
         window.frames['right'].document.getElementById("CopyToFutu").click();
+    });
+}
+
+function goto_week() {
+    page.evaluate(function () {
+        window.frames['right'].document.getElementById("DateButton").click();
     });
 }
 
