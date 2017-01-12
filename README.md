@@ -3,19 +3,19 @@ Fill&Save timesheet of CATW automatically, only for HPE managed cloud team inter
 
 # Workflow
  1. login account
- 2. copy current week's timesheet to next week.
+ 2. copy the previous week's timesheet to current week.
  3. save current week's timesheet.
- 4. repeat 1~3 every week. 
+ 4. repeat 1~3 times every week. 
 
 # How to use
  1. **Step 1**
- 		Make sure your current week's timesheet was filled.			  
+ 		Make sure the previous week's timesheet was filled.			  
 
  2. **Step 2**
  
 		perpare VM which installed docker
 		
-		set proxy for docker
+		set proxy for docker, ref to: https://docs.docker.com/engine/admin/systemd/#http-proxy
 		
 		ssh VM
  3. **Step 3**
