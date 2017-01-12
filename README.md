@@ -15,7 +15,7 @@ Fill&Save timesheet of CATW automatically, only for HPE managed cloud team inter
  
 		perpare VM which installed docker
 		
-		set proxy for docker
+		set proxy for docker, ref to: https://docs.docker.com/engine/admin/systemd/#http-proxy
 		
 		ssh VM
  3. **Step 3**
